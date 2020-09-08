@@ -1,0 +1,22 @@
+{
+  "name": "coca-cola-comics",
+  "version": "1.0.0",
+  "description": "Авторские комиксы от Coca-Cola",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KirillPastushenko/coca-cola-comics.git"
+  },
+  "author": "KirillPastushenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KirillPastushenko/coca-cola-comics/issues"
+  },
+  "homepage": "https://github.com/KirillPastushenko/coca-cola-comics#readme",
+  "devDependencies": {
+    "vue": "^2.6.12"
+  }
+}
