@@ -1,7 +1,8 @@
 import Vue from 'vue';
+import Vuebar from 'vuebar';
 import * as comicsData from './components/comics-data';
 import './css/style.css';
-
+Vue.use(Vuebar);
 const app = new Vue({
     el: '#app',
     data: function () {
@@ -10,9 +11,11 @@ const app = new Vue({
             isComicsShow: false,
             isThumbsActive: false,
             currComics: {},
-            currImage: [],
-            prev: true,
-            next: true
+            currImageArr: [],
+            currImageArrId: -1,
+            prev: false,
+            next: true,
+            currCountImages: 0,
         }
     },
     methods: {
@@ -23,36 +26,42 @@ const app = new Vue({
         showComicPage: function (comicsID) {
             this.isComicsShow = true;
             this.currComics = this.items.filter(item => item.id == comicsID)[0];
-            this.currImage = [];
-            this.currImage.push(this.currComics.poster);
-        //    if(this.currComics.pages.length > 1) this.next = true;
+            this.currImageArr = [];
+            this.currImageArrId = -1;
+            this.currCountImages = this.currComics.pages.length;
+            this.currImageArr.push(this.currComics.poster);
         },
 
-        setCurrImage: function(id){
+        setCurrImageArr: function(id){
+            this.currCountImages = this.currComics.pages.length;
             if(this.currComics.id != id){
-                this.currImage = [];
-                this.currImage = this.currComics.pages[id].slice();
+                this.currImageArrId = id;
+                this.currImageArr = [];
+                this.currImageArr = this.currComics.pages[id].slice();
             }
         },
 
         beforeEnter: function (el) {
             el.style.opacity = 0;
-            el.style.transition = '.3s';
         },
-        enter: function (el) {
-            let delay = el.dataset.index * 850
+
+        enter: function (el, done) {
+            let delay = el.dataset.index * 350;
             setTimeout(function () {
-                el.style.opacity = 1 
+                el.style.opacity = 1;
+                done();
             }, delay)
-          },
+        },
 
+        showPrevPage: function(){
+             this.setCurrImageArr(--this.currImageArrId);
+        },
+
+        showNextPage: function(){
+            this.setCurrImageArr(++this.currImageArrId);
+        }
     }
-
 })
-
-
-
-
 
 
 

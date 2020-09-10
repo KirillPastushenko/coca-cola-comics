@@ -29,8 +29,7 @@ export const comicsData = [
                 'comic-1-2-2.png',
                 'comic-1-2-3.png',
                 'comic-1-2-4.png',
-                'comic-1-2-5.png',
-                'comic-1-2-6.png'
+                'comic-1-2-5.png'
             ],
             [
                 'comic-1-3-1.png',
@@ -76,23 +75,14 @@ export const comicsData = [
                 'comic-1-6-5.png',
                 'comic-1-6-6.png',
                 'comic-1-6-7.png',
-                'comic-1-6-8.png',
-                'comic-1-6-9.png',
-                'comic-1-6-10.png',
-                'comic-1-6-11.png'
+                'comic-1-6-8.png'
             ],
             [
                 'comic-1-7-1.png',
                 'comic-1-7-2.png',
                 'comic-1-7-3.png',
                 'comic-1-7-4.png',
-                'comic-1-7-5.png',
-                'comic-1-7-6.png',
-                'comic-1-7-7.png',
-                'comic-1-7-8.png',
-                'comic-1-7-9.png',
-                'comic-1-7-10.png',
-                'comic-1-7-11.png'
+                'comic-1-7-5.png'
             ],
             [
                 'comic-1-8-1.png',
@@ -100,12 +90,7 @@ export const comicsData = [
                 'comic-1-8-3.png',
                 'comic-1-8-4.png',
                 'comic-1-8-5.png',
-                'comic-1-8-6.png',
-                'comic-1-8-7.png',
-                'comic-1-8-8.png',
-                'comic-1-8-9.png',
-                'comic-1-8-10.png',
-                'comic-1-8-11.png'
+                'comic-1-8-6.png'
             ],
             [
                 'comic-1-9-1.png',
@@ -118,7 +103,10 @@ export const comicsData = [
                 'comic-1-9-8.png',
                 'comic-1-9-9.png',
                 'comic-1-9-10.png',
-                'comic-1-9-11.png'
+                'comic-1-9-11.png',
+                'comic-1-9-12.png',
+                'comic-1-9-13.png',
+                'comic-1-9-14.png' 
             ],
             [
                 'comic-1-10-1.png',
@@ -126,25 +114,12 @@ export const comicsData = [
                 'comic-1-10-3.png',
                 'comic-1-10-4.png',
                 'comic-1-10-5.png',
-                'comic-1-10-6.png',
-                'comic-1-10-7.png',
-                'comic-1-10-8.png',
-                'comic-1-10-9.png',
-                'comic-1-10-10.png',
-                'comic-1-10-11.png'
+                'comic-1-10-6.png'
             ],
             [
                 'comic-1-11-1.png',
                 'comic-1-11-2.png',
-                'comic-1-11-3.png',
-                'comic-1-11-4.png',
-                'comic-1-11-5.png',
-                'comic-1-11-6.png',
-                'comic-1-11-7.png',
-                'comic-1-11-8.png',
-                'comic-1-11-9.png',
-                'comic-1-11-10.png',
-                'comic-1-11-11.png'
+                'comic-1-11-3.png'
             ]
         ]
     },
@@ -162,13 +137,6 @@ export const comicsData = [
                 'comic-2-1-2.png',
                 'comic-2-1-3.png',
                 'comic-2-1-4.png'
-            ],
-            [
-                'comic-2-2-1.png',
-                'comic-2-2-2.png',
-                'comic-2-2-3.png',
-                'comic-2-2-4.png',
-                'comic-2-2-5.png'
             ]
         ]
     },

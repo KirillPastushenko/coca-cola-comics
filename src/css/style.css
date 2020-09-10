@@ -60,9 +60,12 @@ h3~p{font-size: 14px}
 .comic-burder{position: absolute;top: 6px;left: 30px;width: 30px;height: 30px;cursor: pointer;}
 #comic-curr-imgs{height: 100%;position: relative;}
 #comic-curr-imgs svg{height: 100%;width:auto; }
-#comic-curr-imgs use{  transition: .3s; }
+#comic-curr-imgs use{  transition: .7s; }
+
+ 
 .fade-enter-active, .fade-leave-active {transition: opacity .5s;}
 .fade-enter, .fade-leave-to{opacity: 0;}
+.item-enter-active{transition: opacity .5s;}
+.item-enter{opacity: 0;} 
 
-.item-enter-active{transition: opacity .4s;}
-.item-enter{opacity: 0;}
+.vb-dragger {right: 0; width: 3px; background-color: #ddd;border-radius: 3px;}
