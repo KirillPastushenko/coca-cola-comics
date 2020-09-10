@@ -1,8 +1,9 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const PATHS = {
     src: path.join(__dirname, './src'),
@@ -50,7 +51,7 @@ module.exports = {
                 }
             }, {
                 test:/\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
            /*     use: [
                     'style-loader',
                     MiniCssExtractPlugin.loader,
@@ -76,15 +77,17 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            hash:false,
+            minify: false,
+            template:`${PATHS.src}/index.html`,
+            filename: './index.html'
+        }),
         new MiniCssExtractPlugin({
             filename:`${PATHS.assets}css/[name].[hash].css`,
         }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            hash:false,
-            template:`${PATHS.src}/index.html`,
-            filename: './index.html'
-        }),
+
 
         new CopyWebpackPlugin({patterns: [
             {

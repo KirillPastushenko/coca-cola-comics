@@ -1,97 +1,130 @@
-Html Webpack Plugin:
-<pre>
-  Error: html-webpack-plugin could not minify the generated output.
-  In production mode the html minifcation is enabled by default.
-  If you are not generating a valid html output please disable it manually.
-  You can do so by adding the following setting to your HtmlWebpackPlugin config:
-  |
-  |    minify: false
-  |
-  See https://github.com/jantimon/html-webpack-plugin#options for details.
-  For parser dedicated bugs please create an issue here:
-  https://danielruf.github.io/html-minifier-terser/
-  Parse Error: <img :src=`assets/img/${item.poster}`></div> 
-                                      <p class="preview-item-issue">{{ item.issue }}</p> 
-                                      <p class="preview-item-name">{{ item.name }}</p> 
-                                  </div> 
-                              </div> 
-                          </div> 
-                      </div> 
-                  </transition> 
-                  <transition name="fade"> 
-                      <div id="comic" v-if="isComicsShow"> 
-                          <div class="desc"> 
-                              <h3>{{ currComics.name }}</h3> 
-                              <p>{{ currComics.issue }}</p> 
-                          </div> 
-                          <div id="comic-wrap"> 
-                              <div id="comic-curr-imgs"> 
-                                  <svg width="100%" height="100%"  viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="  http://www.w3.org/1999/xlink"> 
-                                      <transition-group  
-                                          name="staggered-fade"  
-                                          tag="g"  
-                                          type="animation" 
-                                          @before-enter="beforeEnter"  
-                                          @after-enter="enter"> 
-                                          <use v-for="(image, index) in currImageArr" :xlink:href=`#img${index}` :key=image v-bind:data-i  ndex="index" width="503" height="815"/> 
-                                      </transition-group> 
-                                      <defs> 
-                                          <image v-for="(image, index) in currImageArr" :xlink:href=`assets/img/${image}` :key=image :id=  `img${index}` width="503" height="815"/> 
-                                      </defs> 
-                                  </svg> 
-                              </div> 
-                              <div class="comic-nav-thumbs" :class="{active: isThumbsActive}"> 
-                                  <div class="comic-burder" @click="showThumbs"> 
-                                      <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-                                          <path d="M0 1H30" stroke="black" /> 
-                                          <path d="M0 11H30" stroke="black" /> 
-                                          <path d="M0 21H30" stroke="black" /> 
-                                      </svg> 
-                                  </div> 
-                                  <div style="height: 100%;" v-bar="{ 
-                                      preventParentScroll: true, 
-                                      scrollThrottle: 50, 
-                                  }" > 
-                                      <ol> 
-                                          <li v-for="(preview, index) in currComics.previews" @click="setCurrImageArr(index)" 
-                                              class="comic-nav-item" :key = preview > 
-                                              <img :src=`assets/img/${preview}`> 
-                                          </li> 
-                                      </ol> 
-                                  </div> 
-                              </div> 
-                          </div> 
-                      </div> 
-                  </transition> 
-              </div> 
-          </section> 
-          <transition name="fade"> 
-              <footer v-if="isComicsShow"> 
-                  <div v-if="currImageArrId > 0 && currImageArrId <= currCountImages" class="comic-nav-arr prev" @click="showPrevPage">пр  едыдущая страница</div> 
-                  <div v-if="currImageArrId < currCountImages-1" class="comic-nav-arr next" @click="showNextPage">следующая страница</div  > 
-              </footer> 
-          </transition> 
-      </div> 
-      <script src="/js/script.js"></script> 
-  <script src="/assets/js/app.b4790fca7cf58e42219b.js"></script></body> 
-  </html>
-  
-  - htmlparser.js:244 new HTMLParser
-    [html]/[html-minifier-terser]/src/htmlparser.js:244:13
-  
-  - htmlminifier.js:993 minify
-    [html]/[html-minifier-terser]/src/htmlminifier.js:993:3
-  
-  - htmlminifier.js:1354 Object.exports.minify
-    [html]/[html-minifier-terser]/src/htmlminifier.js:1354:16
-  
-  - index.js:1002 HtmlWebpackPlugin.minifyHtml
-    [html]/[html-webpack-plugin]/index.js:1002:46
-  
-  - index.js:428 HtmlWebpackPlugin.postProcessHtml
-    [html]/[html-webpack-plugin]/index.js:428:40
-  
-  - index.js:253 Promise.all.then.then
-    [html]/[html-webpack-plugin]/index.js:253:25
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История Coca-Cola </title>
+
+<link href="assets/css/app.dce67f45d5a01da68064.css" rel="stylesheet"></head>
+
+<body class="firstload">
+
+    <div id="app">
+        <header>
+            <div id="header-logo" @click="isComicsShow = false">
+                <img src="assets/img/coke-logo.png" alt="coke logo">
+                Авторские комиксы от Coca-Cola 
+            </div>
+            <ul id="header-menu">
+                <li data-link="1">Свежий выпуск</li>
+                <li data-link="2">Все выпуски</li>
+                <li data-link="3">Конкурс фотографий</li>
+            </ul>
+            <div id="header-btn-back">Назад в Интранет</div>
+        </header>
+        <section>
+            <div class="container">
+                <transition name="fade">
+                    <div id="main" v-if="!isComicsShow">
+                        <div id="top">
+                            <div class="text-wrap">
+                                <div class="fresh">свежий</div>
+                                <h1>История<br>Coca-Cola</h1>
+                                <p>Пилотный выпуск серии авторских комиксов от Coca-Cola.</p>
+                                <p>Нагладно и кратко о продукции компании на все случаи жизни.</p>
+                                <div  @click="showComicPage(1)" class="btn-more">Читать выпуск</div>
+                            </div>
+                            <div class="img-wrap comic-back"><img src="assets/img/main-back.png" alt="comic back"></div>
+                            <div class="img-wrap comic-front"><img src="assets/img/main-front.png" alt="comic front">
+                            </div>
+                        </div>
+                        <div id="preview">
+                            <div class="preview-head">
+                                <h2>Все выпуски</h2>
+                                <div id="preview-sort">
+                                    Сортировка
+                                    <div class="sort-select-box">
+                                        <div class="sort-select-item selected" data-sort="по дате выхода"
+                                            data-sortid="1"></div>
+                                        <div class="sort-select-item" data-sort="по названию" data-sortid="1"></div>
+                                        <div class="sort-select-item" data-sort="по дате выхода" data-sortid="1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="preview-list">
+                                <div class="preview-item" @click="showComicPage(item.id)" v-for="item in items"
+                                    :key="item.issue">
+                                    <div class="img-wrap"><img :src=`assets/img/${item.poster}`></div>
+                                    <p class="preview-item-issue">{{ item.issue }}</p>
+                                    <p class="preview-item-name">{{ item.name }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div id="comic" v-if="isComicsShow">
+                        <div class="desc">
+                            <h3>{{ currComics.name }}</h3>
+                            <p>{{ currComics.issue }}</p>
+                        </div>
+                        <div id="comic-wrap">
+                            <div id="comic-curr-imgs">
+                             
+                                <svg width="100%" height="100%"  viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <transition-group 
+                                        name="staggered-fade" 
+                                        tag="g" 
+                                        type="animation"
+                                        @before-enter="beforeEnter" 
+                                        @after-enter="enter">
+
+                                        <use v-for="(image, index) in currImageArr" :xlink:href=`#img${index}` :key=image v-bind:data-index="index" width="503" height="815"/>
+                                    </transition-group>
+                                    <defs>
+                                        <image v-for="(image, index) in currImageArr" :xlink:href=`assets/img/${image}` :key=image :id=`img${index}` width="503" height="815"/>
+                                    </defs>
+                                </svg>
+                                
+
+                            </div>
+                            <div class="comic-nav-thumbs" :class="{active: isThumbsActive}">
+                                <div class="comic-burder" @click="showThumbs">
+                                    <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 1H30" stroke="black" />
+                                        <path d="M0 11H30" stroke="black" />
+                                        <path d="M0 21H30" stroke="black" />
+                                    </svg>
+                                </div>
+                                <div style="height: 100%;" :class="{active: isThumbsActive}" v-bar="{
+                                    preventParentScroll: true,
+                                    scrollThrottle: 50,
+                                }" >
+                                    <ol>
+                                        <li v-for="(preview, index) in currComics.previews" @click="setCurrImageArr(index)"
+                                            class="comic-nav-item" :key = preview >
+                                            <img :src=`assets/img/${preview}`>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </section>
+
+
+        <transition name="fade">
+            <footer v-if="isComicsShow">
+                <div v-if="currImageArrId > 0 && currImageArrId <= currCountImages" class="comic-nav-arr prev" @click="showPrevPage">предыдущая страница</div>
+                <div v-if="currImageArrId < currCountImages-1" class="comic-nav-arr next" @click="showNextPage">следующая страница</div>
+            </footer>
+        </transition>
+    </div>
+
+ 
+<script src="assets/js/app.dce67f45d5a01da68064.js"></script></body>
+
+</html>

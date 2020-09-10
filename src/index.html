@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>История Coca-Cola </title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="firstload">
@@ -54,7 +53,7 @@
                             </div>
                             <div id="preview-list">
                                 <div class="preview-item" @click="showComicPage(item.id)" v-for="item in items"
-                                    :key="index">
+                                    :key="item.issue">
                                     <div class="img-wrap"><img :src=`assets/img/${item.poster}`></div>
                                     <p class="preview-item-issue">{{ item.issue }}</p>
                                     <p class="preview-item-name">{{ item.name }}</p>
@@ -97,7 +96,7 @@
                                         <path d="M0 21H30" stroke="black" />
                                     </svg>
                                 </div>
-                                <div style="height: 100%;" v-bar="{
+                                <div style="height: 100%;" :class="{active: isThumbsActive}" v-bar="{
                                     preventParentScroll: true,
                                     scrollThrottle: 50,
                                 }" >
@@ -126,9 +125,6 @@
 
    
 
-
-
-    <script src="/js/script.js"></script>
 </body>
 
 </html>

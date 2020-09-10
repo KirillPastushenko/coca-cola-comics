@@ -343,7 +343,7 @@ export const comicsData = [
     {
         id : 14,
         name : 'Заряд Витаминов от сока Добрый',
-        issue : 'выпуск 4',
+        issue : 'выпуск 14',
         poster : 'comic-3-0.png',
         previews: [
             'comic-preview-14-1.jpg'

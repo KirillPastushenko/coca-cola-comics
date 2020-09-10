@@ -34,11 +34,10 @@ const app = new Vue({
 
         setCurrImageArr: function(id){
             this.currCountImages = this.currComics.pages.length;
-            if(this.currComics.id != id){
-                this.currImageArrId = id;
-                this.currImageArr = [];
-                this.currImageArr = this.currComics.pages[id].slice();
-            }
+            this.currImageArrId = id;
+            this.currImageArr = [];
+            this.currImageArr = this.currComics.pages[id].slice();
+            
         },
 
         beforeEnter: function (el) {
@@ -49,7 +48,6 @@ const app = new Vue({
             let delay = el.dataset.index * 350;
             setTimeout(function () {
                 el.style.opacity = 1;
-                done();
             }, delay)
         },
 
