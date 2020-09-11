@@ -13,23 +13,32 @@ const app = new Vue({
       currComics: {},
       currImageArr: [],
       currImageArrId: -1,
+      currCountImages: 0,
       prev: false,
       next: true,
-      currCountImages: 0,
+      showMobile:false
     };
   },
   created() {
+    if (process.browser) {
+        window.addEventListener("resize", this.onResize);
+        this.onResize();
+    };
     document.addEventListener("keydown", (event) => {
       if (event.keyCode == 32 || event.keyCode == 39 || event.keyCode == 13) {
         this.showNextPage();
-   //     if(this.currImageArrId > this.currCountImages-2) {
-   //      this.showComicPage(this.currComics.id + 1);
-   //     }
       } else if (event.keyCode == 37) {
         this.showPrevPage();
       }
     });
   },
+
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+  },
+
+
   methods: {
     showThumbs: function() {
       this.isThumbsActive = !this.isThumbsActive;
@@ -77,6 +86,9 @@ const app = new Vue({
         event.preventDefault()
         let link = event.target.getAttribute('href')
         document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start'}) 
+    },
+    onResize: function () {
+        this.showMobile = document.documentElement.clientWidth > 1023 ? false : true;
     }
   },
 });
