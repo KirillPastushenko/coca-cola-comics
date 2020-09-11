@@ -1,4 +1,4 @@
-@import url("fonts.css");
+@import url('fonts.css');
 * {
   box-sizing: border-box;
   font-family: "Proxima Nova";
@@ -28,6 +28,13 @@ header li {
   letter-spacing: 0.03em;
   cursor: pointer;
   white-space: nowrap;
+}
+header li a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    line-height: 1.214em;
+    letter-spacing: 0.03em;
 }
 footer {
   position: fixed;
@@ -64,7 +71,6 @@ h3 {
   font-size: 30px;
   font-weight: 900;
   line-height: 32px;
-  margin: 3.3em 0 0.55em 0;
 }
 h3 ~ p {
   font-size: 14px;
@@ -171,15 +177,20 @@ h3 ~ p {
 }
 .preview-item {
   width: 15%;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
   cursor: pointer;
   margin-right: 2%;
 }
-
+.preview-item img{
+    transform: scale(1.22);
+    transform-origin: 68% 58%;
+}
+  
 .preview-item-issue {
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 0;
+  text-transform: capitalize;
 }
 .preview-item-name {
   font-size: 16px;
@@ -222,6 +233,7 @@ h3 ~ p {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
 }
 #comic-wrap {
   margin: 0 auto;
@@ -263,6 +275,14 @@ h3 ~ p {
   background-position: left 16%;
   padding-left: 55px;
 }
+.comic-nav-arr.stop{
+    right: 50px;
+    text-align: right;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='36' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30.5 8.5l4-4m0 0l-4-4m4 4H0' stroke='%233D3F4A'/%3E%3C/svg%3E");
+    background-position: right 16%;
+    padding-right: 55px;
+    cursor: pointer;
+  }
 .comic-nav-thumbs {
   position: relative;
   padding: 99px 30px 0 30px;
@@ -283,6 +303,10 @@ h3 ~ p {
   overflow-y: scroll;
   pointer-events: initial;
 }
+.comic-burder{
+    width: 100%;
+    height: 100%;
+}
 .comic-burder path {
   transition: 0.3s;
 }
@@ -299,6 +323,9 @@ h3 ~ p {
   position: relative;
   padding-bottom: 26px;
   cursor: pointer;
+}
+.comic-desc-issue{
+    display: inline-block;
 }
 .comic-nav-thumbs ol li:before {
   content: counter(num);
@@ -321,6 +348,13 @@ h3 ~ p {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+.comic-burder svg{
+    width: 100%;
+    height: 100%;
+}
+#comic h3 {
+    margin: 3.3em 0 0.55em 0;
 }
 #comic-curr-imgs {
   height: 100%;
@@ -361,4 +395,96 @@ h3 ~ p {
 }
 .vb-visible {
   visibility: hidden;
+}
+
+
+.preview-item.active-false{
+    opacity: 0.3;
+    pointer-events: none
+}
+
+@media (max-width:1100px){
+    #comic .desc{margin-left: 0;}
+    h1{font-size:50px;}
+}
+
+
+@media (max-width:1023px){
+    body{padding:0 25px;}
+    .hide1024{display:none}
+    .comic-back {max-width: 57%;}
+    .comic-front{max-width: 43%;}
+    .fresh{margin-top:7%}
+    .preview-item {width: 23%; margin-right: 0!important;}
+    #top .img-wrap{top:7%}
+    #top{padding-bottom: 7%;}
+    #preview-list{justify-content: space-around;}
+    #comic .desc{width: 100%;max-width: 100%;}
+    #comic h3{margin: 10px 0 0 0;width: 100%;text-align: center;font-size: 23px;line-height: 1;}
+    #comic-wrap{max-height: calc(99vh - 105px);padding-top: 45px;}
+    .comic-nav-arr{font-size: 0;width: 40px;bottom: 45vh;}
+    .comic-nav-arr.next, .comic-nav-arr.stop{background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 111 204' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M4.2 4.3l102.3 102.3-93.2 93.2' fill='none' stroke='%233d3f4a' stroke-width='7.7'/%3E%3C/svg%3E");right: 25px;padding-right: 0px;background-position: center;}
+    .comic-nav-arr.prev{background-position: center;left: 25px;background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 111 204' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='1.5'%3E%3Cpath d='M106.5 199.8L4.2 97.5 97.3 4.3' fill='none' stroke='%233d3f4a' stroke-width='7.7'/%3E%3C/svg%3E");padding-left: 0px;}
+    
+}
+
+
+
+@media (max-width:768px){
+    #header-logo{font-size: 0;}
+    #header-logo img{margin-right: 0;height: 100%;width: auto;}
+    #top{display:flex; flex-direction: column-reverse;}
+    #top .img-wrap{position: static;}
+    .comic-back {max-width: 87%;margin: -62% auto -7% auto;padding-left: 16%;}
+    .comic-front{max-width: 55%;transform: translate(-5%, 0%);}
+    .text-wrap{text-align: center;}
+    .firstload .comic-front {transform: translate(25%, -2%) rotate(4deg);}
+    .preview-item {width: 31%; }
+    body{padding:0 15px;}
+    h1~p{margin:0 auto .7em auto}
+    h2{text-align: center;width:100%}
+    header ul{margin-right: 0px;}
+    header li{padding: 0 10px}
+    footer{z-index: 2}
+    #header-logo{height: 50px; width: 103px;}
+    #header-btn-back{padding: 5px 10px 5px 31px;  background-position: 8px 50%;}
+    #header-btn-back a{font-size: 10px; white-space: normal; width: 50px; display: inline-block;}
+    #comic-wrap{position: relative;z-index: 1;padding: /* 5.859vw 9.766vw 0 5.208vw  */65px 14.766vw 0 5.208vw !important;}
+    .comic-nav-arr.next{ width: 5vw;height: 5vw;right: 5px;}
+    .comic-nav-arr.prev{  width: 5vw;height: 5vw;left: 5px;}
+    .comic-nav-thumbs ol{margin-right: -2vw;}
+}
+
+@media (max-width:640px){
+    .preview-item {width: 48%; }
+    header{margin-bottom: 30px}
+    #header-menu{flex-direction: column; text-align:center}
+    #header-menu li a {line-height:1.7;font-size: 20px}
+}
+@media (max-width:460px){
+    #header-menu li a {font-size:4.348vw}
+    header li { padding: 0 2.174vw; }
+}
+  
+ 
+@media (max-width:360px){
+    .preview-item {width: 100%; }
+}
+
+
+@media(max-width:1023px) and (max-height:768px){
+    .comic-nav-thumbs {padding: 12.891vh 3.906vh 0 3.906vh;} 
+    .comic-burder {top: 1.563vh;left: 3.906vh;width: 3.906vh; height: 3.906vh;} 
+    .comic-nav-thumbs ol li {padding-bottom: 3.385vh;} 
+    .comic-nav-item { width: 13.542vh;}
+    .comic-nav-thumbs ol li::before { bottom: 1.693vh; font-size: 1.823vh; }
+}
+
+@media(max-width:1023px) and (orientation:portrait){
+    #comic-wrap{padding: 45px 75px 0 40px;}
+    #comic-curr-imgs svg{height: auto;width: 100%;}
+    .comic-nav-thumbs {padding: 9.668vw 2.930vw 0 2.930vw;} 
+    .comic-burder {top: 1.172vw;left: 2.930vw;width: 2.930vw; height: 2.930vw;} 
+    .comic-nav-thumbs ol li {padding-bottom: 2.539vw;} 
+    .comic-nav-item { width: 10.156vw;}
 }

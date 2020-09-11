@@ -22,6 +22,9 @@ const app = new Vue({
     document.addEventListener("keydown", (event) => {
       if (event.keyCode == 32 || event.keyCode == 39 || event.keyCode == 13) {
         this.showNextPage();
+   //     if(this.currImageArrId > this.currCountImages-2) {
+   //      this.showComicPage(this.currComics.id + 1);
+   //     }
       } else if (event.keyCode == 37) {
         this.showPrevPage();
       }
@@ -70,9 +73,15 @@ const app = new Vue({
       if (this.currImageArrId + 1 < this.currCountImages)
         this.setCurrImageArr(++this.currImageArrId);
     },
+    goToBlock:  function (event) {
+        event.preventDefault()
+        let link = event.target.getAttribute('href')
+        document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start'}) 
+    }
   },
 });
 
 setTimeout(function() {
   document.querySelector("body").classList.remove("firstload");
 }, 50);
+

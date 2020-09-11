@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>История Coca-Cola</title>
   </head>
-
   <body class="firstload">
     <div id="app">
       <header>
@@ -14,9 +13,9 @@
           Авторские комиксы от Coca-Cola
         </div>
         <ul id="header-menu">
-          <li data-link="1" @click="isComicsShow = false">Свежий выпуск</li>
-          <li data-link="2">Все выпуски</li>
-          <!-- <li data-link="3">Конкурс фотографий</li> -->
+          <li @click="isComicsShow = false"><a @click="goToBlock" href="#top">Свежий выпуск</a></li>
+          <li @click="isComicsShow = false"><a @click="goToBlock" href="#preview">Все выпуски</a></li>
+          <!-- <li @click="isComicsShow = false"><a @click="goToBlock" href="#fotokonkurs">Конкурс фотографий</a></li> -->
         </ul>
         <div id="header-btn-back"><a href="https://cchellenic.sharepoint.com/sites/intranet-ru/">Назад в Интранет</a></div>
         <!-- <div id="header-btn-back">Назад в Интранет</div> -->
@@ -30,12 +29,8 @@
                   <div class="fresh">свежий</div>
                   <h1>История<br />Coca-Cola</h1>
                   <p>Пилотный выпуск серии авторских комиксов от Coca-Cola.</p>
-                  <p>
-                    Нагладно и кратко о продукции компании на все случаи жизни.
-                  </p>
-                  <div @click="showComicPage(1)" class="btn-more">
-                    Читать выпуск
-                  </div>
+                  <p>Нагладно и кратко о продукции компании на все случаи жизни.</p>
+                  <div @click="showComicPage(1)" class="btn-more">Читать выпуск</div>
                 </div>
                 <div class="img-wrap comic-back">
                   <img src="assets/img/main-back.png" alt="comic back" />
@@ -50,31 +45,14 @@
                   <div id="preview-sort">
                     Сортировка
                     <div class="sort-select-box">
-                      <div
-                        class="sort-select-item selected"
-                        data-sort="по дате выхода"
-                        data-sortid="1"
-                      ></div>
-                      <div
-                        class="sort-select-item"
-                        data-sort="по названию"
-                        data-sortid="1"
-                      ></div>
-                      <div
-                        class="sort-select-item"
-                        data-sort="по дате выхода"
-                        data-sortid="1"
-                      ></div>
+                      <div class="sort-select-item selected" data-sort="по дате выхода"></div>
+                      <div class="sort-select-item" data-sort="по названию"></div>
+                      <div class="sort-select-item" data-sort="по дате выхода"></div>
                     </div>
                   </div>
                 </div>
                 <div id="preview-list">
-                  <div
-                    class="preview-item"
-                    @click="showComicPage(item.id)"
-                    v-for="item in items"
-                    :key="item.issue"
-                  >
+                  <div class="preview-item" @click="showComicPage(item.id)" v-for="item in items" :key="item.issue" :class=`active-${item.active}`>
                     <div class="img-wrap">
                       <img :src=`assets/img/${item.poster}`>
                     </div>
@@ -89,9 +67,9 @@
             <div id="comic" v-if="isComicsShow">
               <div class="desc">
                 <h3>{{ currComics.name }}</h3>
-                <p>{{ currComics.issue }}</p>
-                <p>&nbsp;</p>
-                <p>
+                <p class="comic-desc-issue">{{ currComics.issue }}</p>
+                <p class="hide1024">&nbsp;</p>
+                <p class="hide1024">
                   Используйте стрелки или&nbsp;пробел для&nbsp;перелистывания
                 </p>
               </div>
@@ -102,18 +80,16 @@
                     height="100%"
                     viewBox="0 0 503 817"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
                     <transition-group
                       name="staggered-fade"
                       tag="g"
                       type="animation"
                       @before-enter="beforeEnter"
-                      @after-enter="enter"
-                    >
+                      @after-enter="enter">
                       <use
                         v-for="(image, index) in currImageArr"
-                        :xlink:href="`#img${index}`"
+                        :xlink:href=`#img${index}`
                         :key="image"
                         v-bind:data-index="index"
                         width="503"
@@ -129,33 +105,19 @@
                 </div>
                 <div class="comic-nav-thumbs" :class="{active: isThumbsActive}">
                   <div class="comic-burder" @click="showThumbs">
-                    <svg
-                      width="30"
-                      height="33"
-                      viewBox="0 0 30 33"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg width="30" height="33" viewBox="0 0 30 33" fill="none"  xmlns="http://www.w3.org/2000/svg">
                       <path d="M0 1H30" stroke="black" />
                       <path d="M0 11H30" stroke="black" />
                       <path d="M0 21H30" stroke="black" />
                     </svg>
                   </div>
-                  <div
-                    style="height: 100%;"
-                    :class="{active: isThumbsActive}"
-                    v-bar="{
-                                    preventParentScroll: true,
-                                    scrollThrottle: 50,
-                                }"
-                  >
+                  <div style="height: 100%;" :class="{active: isThumbsActive}" v-bar="{preventParentScroll: true, scrollThrottle: 50}">
                     <ol>
                       <li
                         v-for="(preview, index) in currComics.previews"
                         @click="setCurrImageArr(index)"
                         class="comic-nav-item"
-                        :key="preview"
-                      >
+                        :key="preview">
                         <img :src=`assets/img/${preview}`>
                       </li>
                     </ol>
@@ -172,21 +134,15 @@
           <div
             v-if="currImageArrId > 0 && currImageArrId <= currCountImages"
             class="comic-nav-arr prev"
-            @click="showPrevPage"
-          >
-            предыдущая страница
-          </div>
+            @click="showPrevPage">предыдущая страница</div>
           <div
             v-if="currImageArrId < currCountImages-1"
             class="comic-nav-arr next"
-            @click="showNextPage"
-          >
-            следующая страница
-          </div>
+            @click="showNextPage">следующая страница</div>
           <div
             v-if="currImageArrId > currCountImages-2"
             class="comic-nav-arr stop"
-          >
+            @click="showComicPage(currComics.id+1)">
             продолжение в&nbsp;следующем выпуске...
           </div>
         </footer>

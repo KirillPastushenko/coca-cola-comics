@@ -2,6 +2,7 @@ export const comicsData = [
     {
         id : 1,
         name : 'История Coca-Cola',
+        active: true,
         issue : 'выпуск 1',
         poster : 'comic-1-0.png',
         previews: [
@@ -126,6 +127,7 @@ export const comicsData = [
     {
         id : 2,
         name : 'Кристально чистая BonAqua',
+        active: true,
         issue : 'выпуск 2',
         poster : 'comic-2-0.png',
         previews: [
@@ -143,6 +145,7 @@ export const comicsData = [
     {
         id : 3,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 3',
         poster : 'comic-3-0.png',
         previews: [
@@ -168,8 +171,9 @@ export const comicsData = [
     {
         id : 4,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 4',
-        poster : 'comic-3-0.png',
+        poster : 'comic-4-0.png',
         previews: [
             'comic-preview-4-1.jpg'
         ],
@@ -187,8 +191,9 @@ export const comicsData = [
     {
         id : 5,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 5',
-        poster : 'comic-3-0.png',
+        poster : 'comic-5-0.png',
         previews: [
             'comic-preview-5-1.jpg'
         ],
@@ -204,8 +209,9 @@ export const comicsData = [
     {
         id : 6,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 6',
-        poster : 'comic-3-0.png',
+        poster : 'comic-6-0.png',
         previews: [
             'comic-preview-6-1.jpg'
         ],
@@ -221,8 +227,9 @@ export const comicsData = [
     {
         id : 7,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 7',
-        poster : 'comic-3-0.png',
+        poster : 'comic-7-0.png',
         previews: [
             'comic-preview-7-1.jpg',
             'comic-preview-7-2.jpg'
@@ -239,8 +246,9 @@ export const comicsData = [
     {
         id : 8,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 8',
-        poster : 'comic-3-0.png',
+        poster : 'comic-8-0.png',
         previews: [
             'comic-preview-8-1.jpg'
         ],
@@ -256,8 +264,9 @@ export const comicsData = [
     {
         id : 9,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 9',
-        poster : 'comic-3-0.png',
+        poster : 'comic-9-0.png',
         previews: [
             'comic-preview-9-1.jpg'
         ],
@@ -273,8 +282,9 @@ export const comicsData = [
     {
         id : 10,
         name : 'Заряд Витаминов от сока Добрый',
+        active: true,
         issue : 'выпуск 10',
-        poster : 'comic-3-0.png',
+        poster : 'comic-10-0.png',
         previews: [
             'comic-preview-10-1.jpg'
         ],
@@ -290,8 +300,9 @@ export const comicsData = [
     {
         id : 11,
         name : 'Заряд Витаминов от сока Добрый',
+        active: false,
         issue : 'выпуск 11',
-        poster : 'comic-3-0.png',
+        poster : 'comic-11-0.png',
         previews: [
             'comic-preview-11-1.jpg'
         ],
@@ -307,8 +318,9 @@ export const comicsData = [
     {
         id : 12,
         name : 'Заряд Витаминов от сока Добрый',
+        active: false,
         issue : 'выпуск 12',
-        poster : 'comic-3-0.png',
+        poster : 'comic-12-0.png',
         previews: [
             'comic-preview-12-1.jpg',
             'comic-preview-12-2.jpg'
@@ -325,8 +337,9 @@ export const comicsData = [
     {
         id : 13,
         name : 'Заряд Витаминов от сока Добрый',
+        active: false,
         issue : 'выпуск 13',
-        poster : 'comic-3-0.png',
+        poster : 'comic-13-0.png',
         previews: [
             'comic-preview-13-1.jpg',
             'comic-preview-13-2.jpg'
@@ -343,8 +356,9 @@ export const comicsData = [
     {
         id : 14,
         name : 'Заряд Витаминов от сока Добрый',
+        active: false,
         issue : 'выпуск 14',
-        poster : 'comic-3-0.png',
+        poster : 'comic-14-0.png',
         previews: [
             'comic-preview-14-1.jpg'
         ],
