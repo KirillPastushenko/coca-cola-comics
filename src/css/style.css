@@ -77,17 +77,21 @@ h3 ~ p {
   font-size: 14px;
 }
 #header-logo {
-  width: 250px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  line-height: 1.214em;
-  letter-spacing: 0.03em;
-  cursor: pointer;
+    width: 250px;
+    font-size: 14px;
+    line-height: 1.214em;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    position: relative;
+    padding: 29px 0 24px 109px;
 }
 #header-logo img {
-  max-width: 90px;
-  margin-right: 21px;
+    width: 90px;
+    margin-right: 21px;
+    height: 90px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 #header-btn-back {
   font-size: 14px;

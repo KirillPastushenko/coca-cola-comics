@@ -52,9 +52,9 @@
                   </div>
                 </div>
                 <div id="preview-list">
-                  <div class="preview-item" @click="showComicPage(item.id)" v-for="item in items" :key="item.issue" :class=`active-${item.active}`>
+                  <div class="preview-item" @click="showComicPage(item.id)" v-for="item in items" :key="item.issue" :class="'active-'+item.active">
                     <div class="img-wrap">
-                      <img :src=`assets/img/${item.poster}`>
+                      <img :src="'assets/img/'+item.poster">
                     </div>
                     <p class="preview-item-issue">{{ item.issue }}</p>
                     <p class="preview-item-name">{{ item.name }}</p>
@@ -79,18 +79,18 @@
 
                     <svg v-if="!showMobile" width="100%" height="100%" viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <transition-group name="staggered-fade" tag="g" type="animation" @before-enter="beforeEnter" @after-enter="enter">
-                            <use v-for="(image, index) in currImageArr" :xlink:href=`#img${index}` :key="image" v-bind:data-index="index" width="503" height="815"/>
+                            <use v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" v-bind:data-index="index" width="503" height="815"/>
                         </transition-group>
                         <defs>
-                            <image v-for="(image, index) in currImageArr" :xlink:href=`assets/img/${image}` :key=image  :id=`img${index}` width="503" height="815"/>
+                            <image v-for="(image, index) in currImageArr" :xlink:href="'assets/img/'+image" :key=image  :id="'img'+index" width="503" height="815"/>
                         </defs>
                     </svg>
 
 
                     <svg v-if="showMobile" v-for="(arrImages, arrIndex) in currComics.pages" width="100%" height="100%" viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <use v-for="(image, index) in arrImages" :xlink:href=`#img${image}` :key="image" v-bind:data-index="index" width="503" height="815"/>
+                        <use v-for="(image, index) in arrImages" :xlink:href="'#img'+image" :key="image" v-bind:data-index="index" width="503" height="815"/>
                         <defs>
-                            <image v-for="(image, index) in arrImages" :xlink:href=`assets/img/${image}` :key=image  :id=`img${image}` width="503" height="815"/>
+                            <image v-for="(image, index) in arrImages" :xlink:href="'assets/img/'+image" :key=image  :id="'img'+image" width="503" height="815"/>
                         </defs>
                     </svg>
 
@@ -114,7 +114,7 @@
                         @click="setCurrImageArr(index)"
                         class="comic-nav-item"
                         :key="preview">
-                        <img :src=`assets/img/${preview}`>
+                        <img :src="'assets/img/'+preview">
                       </li>
                     </ol>
                   </div>
