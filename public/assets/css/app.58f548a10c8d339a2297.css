@@ -1,4 +1,27 @@
-@import url('fonts.css');
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Black'), local('Proxima-Nova-Black'),
+      url(/ProximaNova-Black.woff2) format('woff2'),
+      url(/ProximaNova-Black.ttf) format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Bold'), local('Proxima-Nova-Bold'),
+      url(/ProximaNova-Bold.woff2) format('woff2'),
+      url(/ProximaNova-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Regular'), local('Proxima-Nova-Regular'),
+      url(/ProximaNova-Regular.woff2) format('woff2'),
+      url(/ProximaNova-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+} 
 * {
   box-sizing: border-box;
   font-family: "Proxima Nova";
@@ -572,4 +595,5 @@ h3 ~ p {
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #comic-curr-imgs use{opacity: 1!important; transform: translateY(0px)!important;}
 }
+
 
