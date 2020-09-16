@@ -18,7 +18,7 @@ const app = new Vue({
       next: true,
       showMobile:false,
       showModal: false,
-      anim: false
+      anim: true
     };
   },
 
@@ -57,11 +57,18 @@ const app = new Vue({
     },
 
     setCurrImageArr: function(id) {
-      this.anim = true;
-      this.currCountImages = this.currComics.pages.length;
-      this.currImageArrId = id;
-      this.currImageArr = [];
-      this.currImageArr = this.currComics.pages[id].slice();
+      if (this.anim){
+        this.currCountImages = this.currComics.pages.length;
+        this.currImageArrId = id;
+        this.currImageArr = [];
+        this.currImageArr = this.currComics.pages[id].slice();
+        this.anim = false;
+        setTimeout(() => {  
+          this.anim = true;
+        }, this.currImageArr.length * 700)
+      } else {
+         this.anim = "ready";
+      }
     },
  
     beforeEnter: function(el) {
