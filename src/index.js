@@ -18,7 +18,7 @@ const app = new Vue({
       next: true,
       showMobile:false,
       showModal: false,
-      anim: true
+      anim: false
     };
   },
 
@@ -57,11 +57,12 @@ const app = new Vue({
     },
 
     setCurrImageArr: function(id) {
-        this.currCountImages = this.currComics.pages.length;
-        this.currImageArrId = id;
-        this.currImageArr = [];
-        this.currImageArr = this.currComics.pages[id].slice();
-     },
+      this.anim = true;
+      this.currCountImages = this.currComics.pages.length;
+      this.currImageArrId = id;
+      this.currImageArr = [];
+      this.currImageArr = this.currComics.pages[id].slice();
+    },
  
     beforeEnter: function(el) {
       el.style.opacity = 0;
@@ -85,11 +86,13 @@ const app = new Vue({
       if (this.currImageArrId + 1 < this.currCountImages)
         this.setCurrImageArr(++this.currImageArrId);
     },
+
     goToBlock:  function (event) {
         event.preventDefault();
         let link = event.target.getAttribute('href');
         document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start'});
     },
+
     onResize: function () {
         this.showMobile = document.documentElement.clientWidth > 1023 ? false : true;
     },

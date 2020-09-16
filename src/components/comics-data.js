@@ -138,7 +138,21 @@ export const comicsData = [
                 'comic-2-1-1.png',
                 'comic-2-1-2.png',
                 'comic-2-1-3.png',
-                'comic-2-1-4.png'
+                'comic-2-1-4.png',
+                'comic-2-1-5.png',
+                'comic-2-1-6.png',
+                'comic-2-1-7.png',
+                'comic-2-1-8.png',
+                'comic-2-1-9.png',
+                'comic-2-1-10.png',
+                'comic-2-1-11.png',
+                'comic-2-1-12.png',
+                'comic-2-1-13.png',
+                'comic-2-1-14.png',
+                'comic-2-1-15.png',
+                'comic-2-1-16.png',
+                'comic-2-1-17.png',
+                
             ]
         ]
     },
@@ -157,20 +171,28 @@ export const comicsData = [
                 'comic-3-1-1.png',
                 'comic-3-1-2.png',
                 'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-3-1-4.png',
+                'comic-3-1-5.png',
+                'comic-3-1-6.png',
+                'comic-3-1-7.png',
+                'comic-3-1-8.png',
+                'comic-3-1-9.png',
+                'comic-3-1-10.png',
             ],
             [
                 'comic-3-2-1.png',
                 'comic-3-2-2.png',
                 'comic-3-2-3.png',
                 'comic-3-2-4.png',
-                'comic-3-2-5.png'
+                'comic-3-2-5.png',
+                'comic-3-2-6.png',
+                'comic-3-2-7.png',
             ]
         ]
     },
     {
         id : 4,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Большая перемена',
         active: true,
         issue : 'выпуск 4',
         poster : 'comic-4-0.png',
@@ -185,12 +207,18 @@ export const comicsData = [
                 'comic-4-1-4.png',
                 'comic-4-1-5.png',
                 'comic-4-1-6.png',
+                'comic-4-1-7.png',
+                'comic-4-1-8.png',
+                'comic-4-1-9.png',
+                'comic-4-1-10.png',
+                'comic-4-1-11.png',
+                'comic-4-1-12.png',
             ]
         ]
     },
     {
         id : 5,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Вкусный и полезный микс',
         active: true,
         issue : 'выпуск 5',
         poster : 'comic-5-0.png',
@@ -199,16 +227,24 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-5-1-1.png',
+                'comic-5-1-2.png',
+                'comic-5-1-3.png',
+                'comic-5-1-4.png',
+                'comic-5-1-5.png',
+                'comic-5-1-6.png',
+                'comic-5-1-7.png',
+                'comic-5-1-8.png',
+                'comic-5-1-9.png',
+                'comic-5-1-10.png',
+                'comic-5-1-11.png',
+                'comic-5-1-12.png',
             ]
         ]
     },
     {
         id : 6,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Залог гармонии',
         active: true,
         issue : 'выпуск 6',
         poster : 'comic-6-0.png',
@@ -217,16 +253,21 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-6-1-1.png',
+                'comic-6-1-2.png',
+                'comic-6-1-3.png',
+                'comic-6-1-4.png',
+                'comic-6-1-5.png',
+                'comic-6-1-6.png',
+                'comic-6-1-7.png',
+                'comic-6-1-8.png',
+
             ]
         ]
     },
     {
         id : 7,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Жажда приключений',
         active: true,
         issue : 'выпуск 7',
         poster : 'comic-7-0.png',
@@ -236,16 +277,39 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-7-1-1.png',
+                'comic-7-1-2.png',
+                'comic-7-1-3.png',
+                'comic-7-1-4.png',
+                'comic-7-1-5.png',
+                'comic-7-1-6.png',
+                'comic-7-1-7.png',
+                'comic-7-1-8.png',
+                'comic-7-1-9.png',
+                'comic-7-1-10.png',
+                'comic-7-1-11.png',
+                'comic-7-1-12.png'
+            ],
+            [
+                'comic-7-2-1.png',
+                'comic-7-2-2.png',
+                'comic-7-2-3.png',
+                'comic-7-2-4.png',
+                'comic-7-2-5.png',
+                'comic-7-2-6.png',
+                'comic-7-2-7.png',
+                'comic-7-2-8.png',
+                'comic-7-2-9.png',
+                'comic-7-2-10.png',
+                'comic-7-2-11.png',
+                'comic-7-2-12.png',
+                'comic-7-2-13.png'
             ]
         ]
     },
     {
         id : 8,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Энергия в твоем вкусе',
         active: true,
         issue : 'выпуск 8',
         poster : 'comic-8-0.png',
@@ -254,16 +318,25 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-8-1-1.png',
+                'comic-8-1-2.png',
+                'comic-8-1-3.png',
+                'comic-8-1-4.png',
+                'comic-8-1-5.png',
+                'comic-8-1-6.png',
+                'comic-8-1-7.png',
+                'comic-8-1-8.png',
+                'comic-8-1-9.png',
+                'comic-8-1-10.png',
+                'comic-8-1-11.png',
+                'comic-8-1-12.png',
+                'comic-8-1-13.png',
             ]
         ]
     },
     {
         id : 9,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Крепкая дружба с Rich',
         active: true,
         issue : 'выпуск 9',
         poster : 'comic-9-0.png',
@@ -272,16 +345,27 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-9-1-1.png',
+                'comic-9-1-2.png',
+                'comic-9-1-3.png',
+                'comic-9-1-4.png',
+                'comic-9-1-5.png',
+                'comic-9-1-6.png',
+                'comic-9-1-7.png',
+                'comic-9-1-8.png',
+                'comic-9-1-9.png',
+                'comic-9-1-10.png',
+                'comic-9-1-11.png',
+                'comic-9-1-12.png',
+                'comic-9-1-13.png',
+                'comic-9-1-14.png',
+                'comic-9-1-15.png',
             ]
         ]
     },
     {
         id : 10,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : 'Попробуй... Почувствуй',
         active: true,
         issue : 'выпуск 10',
         poster : 'comic-10-0.png',
@@ -290,17 +374,30 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-10-1-1.png',
+                'comic-10-1-2.png',
+                'comic-10-1-3.png',
+                'comic-10-1-4.png',
+                'comic-10-1-5.png',
+                'comic-10-1-6.png',
+                'comic-10-1-7.png',
+                'comic-10-1-8.png',
+                'comic-10-1-9.png',
+                'comic-10-1-10.png',
+                'comic-10-1-11.png',
+                'comic-10-1-12.png',
+                'comic-10-1-13.png',
+                'comic-10-1-14.png',
+                'comic-10-1-15.png',
+                'comic-10-1-16.png',
+                'comic-10-1-17.png',
             ]
         ]
     },
     {
         id : 11,
-        name : 'Заряд Витаминов от сока Добрый',
-        active: false,
+        name : 'Радуйте любимых',
+        active: true,
         issue : 'выпуск 11',
         poster : 'comic-11-0.png',
         previews: [
@@ -308,17 +405,22 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-11-1-1.png',
+                'comic-11-1-2.png',
+                'comic-11-1-3.png',
+                'comic-11-1-4.png',
+                'comic-11-1-5.png',
+                'comic-11-1-6.png',
+                'comic-11-1-7.png',
+                'comic-11-1-8.png',
+                'comic-11-1-9.png',
             ]
         ]
     },
     {
         id : 12,
-        name : 'Заряд Витаминов от сока Добрый',
-        active: false,
+        name : 'Прояви характер',
+        active: true,
         issue : 'выпуск 12',
         poster : 'comic-12-0.png',
         previews: [
@@ -327,17 +429,33 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-12-1-1.png',
+                'comic-12-1-2.png',
+                'comic-12-1-3.png',
+                'comic-12-1-4.png',
+                'comic-12-1-5.png',
+                'comic-12-1-6.png',
+                'comic-12-1-7.png',
+                'comic-12-1-8.png',
+                'comic-12-1-9.png',
+                'comic-12-1-10.png',
+                'comic-12-1-11.png',
+            ],
+            [
+                'comic-12-2-1.png',
+                'comic-12-2-2.png',
+                'comic-12-2-3.png',
+                'comic-12-2-4.png',
+                'comic-12-2-5.png',
+                'comic-12-2-6.png',
+                'comic-12-2-7.png',
             ]
         ]
     },
     {
         id : 13,
-        name : 'Заряд Витаминов от сока Добрый',
-        active: false,
+        name : 'Моменты жизни',
+        active: true,
         issue : 'выпуск 13',
         poster : 'comic-13-0.png',
         previews: [
@@ -346,17 +464,35 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-13-1-1.png',
+                'comic-13-1-2.png',
+                'comic-13-1-3.png',
+                'comic-13-1-4.png',
+                'comic-13-1-5.png',
+                'comic-13-1-6.png',
+                'comic-13-1-7.png',
+                'comic-13-1-8.png',
+            ],
+            [
+                'comic-13-2-1.png',
+                'comic-13-2-2.png',
+                'comic-13-2-3.png',
+                'comic-13-2-4.png',
+                'comic-13-2-5.png',
+                'comic-13-2-6.png',
+                'comic-13-2-7.png',
+                'comic-13-2-8.png',
+                'comic-13-2-9.png',
+                'comic-13-2-10.png',
+                'comic-13-2-11.png',
+                'comic-13-2-12.png'
             ]
         ]
     },
     {
         id : 14,
-        name : 'Заряд Витаминов от сока Добрый',
-        active: false,
+        name : 'История продолжается',
+        active: true,
         issue : 'выпуск 14',
         poster : 'comic-14-0.png',
         previews: [
@@ -364,10 +500,16 @@ export const comicsData = [
         ],
         pages : [
             [
-                'comic-3-1-1.png',
-                'comic-3-1-2.png',
-                'comic-3-1-3.png',
-                'comic-3-1-4.png'
+                'comic-14-1-1.png',
+                'comic-14-1-2.png',
+                'comic-14-1-3.png',
+                'comic-14-1-4.png',
+                'comic-14-1-5.png',
+                'comic-14-1-6.png',
+                'comic-14-1-7.png',
+                'comic-14-1-8.png',
+                'comic-14-1-9.png',
+                'comic-14-1-10.png',
             ]
         ]
     },
