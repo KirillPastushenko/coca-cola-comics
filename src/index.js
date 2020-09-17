@@ -18,7 +18,8 @@ const app = new Vue({
       next: true,
       showMobile:false,
       showModal: false,
-      anim: true
+      anim: true,
+      timer: null
     };
   },
 
@@ -62,10 +63,9 @@ const app = new Vue({
         this.currImageArrId = id;
         this.currImageArr = [];
         this.currImageArr = this.currComics.pages[id].slice();
-        setTimeout(() => {  
+        this.timer = setTimeout(() => {  
           this.anim = true;
         }, this.currImageArr.length * 700);
-    
     },
  
     beforeEnter: function(el) {
@@ -75,7 +75,6 @@ const app = new Vue({
 
     enter: function(el, done) {
       let delay = el.dataset.index * 700;
-   
       setTimeout(function() {
         el.style.opacity = 1;
         el.style.transform = "translateY(0)";
@@ -87,6 +86,7 @@ const app = new Vue({
         this.setCurrImageArr(--this.currImageArrId);
       }  else {
         this.anim = true;
+        clearTimeout(this.timer);
       }
     },
 
@@ -95,14 +95,14 @@ const app = new Vue({
         this.setCurrImageArr(++this.currImageArrId);
       } else {
           this.anim = true;
+          clearTimeout(this.timer);
       }
-       
     },
 
     goToBlock:  function (event) {
-        event.preventDefault();
-        let link = event.target.getAttribute('href');
-        document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start'});
+      event.preventDefault();
+      let link = event.target.getAttribute('href');
+      document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start'});
     },
 
     onResize: function () {
