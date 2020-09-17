@@ -57,18 +57,15 @@ const app = new Vue({
     },
 
     setCurrImageArr: function(id) {
-      if (this.anim){
+        this.anim = false;
         this.currCountImages = this.currComics.pages.length;
         this.currImageArrId = id;
         this.currImageArr = [];
         this.currImageArr = this.currComics.pages[id].slice();
-        this.anim = false;
         setTimeout(() => {  
           this.anim = true;
-        }, this.currImageArr.length * 700)
-      } else {
-         this.anim = "ready";
-      }
+        }, this.currImageArr.length * 700);
+    
     },
  
     beforeEnter: function(el) {
@@ -78,6 +75,7 @@ const app = new Vue({
 
     enter: function(el, done) {
       let delay = el.dataset.index * 700;
+   
       setTimeout(function() {
         el.style.opacity = 1;
         el.style.transform = "translateY(0)";
@@ -85,13 +83,20 @@ const app = new Vue({
     },
 
     showPrevPage: function() {
-      if (this.currImageArrId > 0)
+      if (this.currImageArrId > 0 &&  this.anim == true) {
         this.setCurrImageArr(--this.currImageArrId);
+      }  else {
+        this.anim = true;
+      }
     },
 
     showNextPage: function() {
-      if (this.currImageArrId + 1 < this.currCountImages)
+      if (this.currImageArrId + 1 < this.currCountImages && this.anim == true) {
         this.setCurrImageArr(++this.currImageArrId);
+      } else {
+          this.anim = true;
+      }
+       
     },
 
     goToBlock:  function (event) {
@@ -103,6 +108,7 @@ const app = new Vue({
     onResize: function () {
         this.showMobile = document.documentElement.clientWidth > 1023 ? false : true;
     },
+
  
   },
 });

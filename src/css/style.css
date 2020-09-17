@@ -453,23 +453,9 @@ h3 ~ p {
   right: 0;
 }
 
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
+ 
+.modal-enter,
+.modal-leave-active {opacity: 0;}
 
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
@@ -477,8 +463,7 @@ h3 ~ p {
   transform: scale(1.1);
 }
 
-.animready{opacity: 1!important;transform: translateY(0)!important; transition: 0!important;}
-
+ 
 @media (max-width:1100px){
     #comic .desc{margin-left: 0;}
     h1{font-size:50px;}
