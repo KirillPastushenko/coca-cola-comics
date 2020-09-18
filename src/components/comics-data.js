@@ -1,7 +1,7 @@
 export const comicsData = [
     {
         id : 1,
-        name : 'История Coca-Cola',
+        name : 'Знакомство со&nbsp;стратегией 24/7',
         active: true,
         issue : 'выпуск 1',
         poster : 'comic-1-0.png',
@@ -126,7 +126,7 @@ export const comicsData = [
     },
     {
         id : 2,
-        name : 'Кристально чистая BonAqua',
+        name : 'Настройся на&nbsp;хорошее с&nbsp;Bonaqua',
         active: true,
         issue : 'выпуск 2',
         poster : 'comic-2-0.png',
@@ -158,7 +158,7 @@ export const comicsData = [
     },
     {
         id : 3,
-        name : 'Заряд Витаминов от сока Добрый',
+        name : '«Добрый»: вкус и&nbsp;польза каждый день',
         active: true,
         issue : 'выпуск 3',
         poster : 'comic-3-0.png',
@@ -192,7 +192,7 @@ export const comicsData = [
     },
     {
         id : 4,
-        name : 'Большая перемена',
+        name : 'Включай настроение с&nbsp;Pulpy ',
         active: true,
         issue : 'выпуск 4',
         poster : 'comic-4-0.png',
@@ -218,7 +218,7 @@ export const comicsData = [
     },
     {
         id : 5,
-        name : 'Вкусный и полезный микс',
+        name : 'Вкусный и&nbsp;полезный перекус с&nbsp;Adez',
         active: true,
         issue : 'выпуск 5',
         poster : 'comic-5-0.png',
@@ -244,7 +244,7 @@ export const comicsData = [
     },
     {
         id : 6,
-        name : 'Залог гармонии',
+        name : 'Найди свой фьюжн с&nbsp;FUZETEA',
         active: true,
         issue : 'выпуск 6',
         poster : 'comic-6-0.png',
@@ -267,7 +267,7 @@ export const comicsData = [
     },
     {
         id : 7,
-        name : 'Жажда приключений',
+        name : 'Fanta: вот это поворот ',
         active: true,
         issue : 'выпуск 7',
         poster : 'comic-7-0.png',
@@ -309,7 +309,7 @@ export const comicsData = [
     },
     {
         id : 8,
-        name : 'Энергия в твоем вкусе',
+        name : 'Coca-Cola Energy: энергия в&nbsp;твоём вкусе',
         active: true,
         issue : 'выпуск 8',
         poster : 'comic-8-0.png',
@@ -336,7 +336,7 @@ export const comicsData = [
     },
     {
         id : 9,
-        name : 'Крепкая дружба с Rich',
+        name : 'Устрой себе Rich!',
         active: true,
         issue : 'выпуск 9',
         poster : 'comic-9-0.png',
@@ -365,7 +365,7 @@ export const comicsData = [
     },
     {
         id : 10,
-        name : 'Попробуй... Почувствуй',
+        name : 'Coca-Cola: попробуй… почувствуй',
         active: true,
         issue : 'выпуск 10',
         poster : 'comic-10-0.png',
@@ -396,7 +396,7 @@ export const comicsData = [
     },
     {
         id : 11,
-        name : 'Радуйте любимых',
+        name : 'Разнообразие напитков для всей семьи',
         active: true,
         issue : 'выпуск 11',
         poster : 'comic-11-0.png',
@@ -414,20 +414,7 @@ export const comicsData = [
                 'comic-11-1-7.png',
                 'comic-11-1-8.png',
                 'comic-11-1-9.png',
-            ]
-        ]
-    },
-    {
-        id : 12,
-        name : 'Прояви характер',
-        active: true,
-        issue : 'выпуск 12',
-        poster : 'comic-12-0.png',
-        previews: [
-            'comic-preview-12-1.jpg',
-            'comic-preview-12-2.jpg'
-        ],
-        pages : [
+            ],
             [
                 'comic-12-1-1.png',
                 'comic-12-1-2.png',
@@ -453,14 +440,14 @@ export const comicsData = [
         ]
     },
     {
-        id : 13,
-        name : 'Моменты жизни',
+        id : 12,
+        name : 'Прояви характер вместе с&nbsp;Schweppes ',
         active: true,
-        issue : 'выпуск 13',
-        poster : 'comic-13-0.png',
+        issue : 'выпуск 12',
+        poster : 'comic-12-0.png',
         previews: [
-            'comic-preview-13-1.jpg',
-            'comic-preview-13-2.jpg'
+            'comic-preview-12-1.jpg',
+            'comic-preview-12-2.jpg'
         ],
         pages : [
             [
@@ -490,13 +477,14 @@ export const comicsData = [
         ]
     },
     {
-        id : 14,
-        name : 'История продолжается',
+        id : 13,
+        name : 'Моменты потребления – моменты жизни ',
         active: true,
-        issue : 'выпуск 14',
-        poster : 'comic-14-0.png',
+        issue : 'выпуск 13',
+        poster : 'comic-13-0.png',
         previews: [
-            'comic-preview-14-1.jpg'
+            'comic-preview-13-1.jpg',
+            'comic-preview-13-2.jpg'
         ],
         pages : [
             [
@@ -513,5 +501,18 @@ export const comicsData = [
             ]
         ]
     },
+    // {
+    //     id : 14,
+    //     name : 'История продолжается',
+    //     active: true,
+    //     issue : 'выпуск 14',
+    //     poster : 'comic-14-0.png',
+    //     previews: [
+    //         'comic-preview-14-1.jpg'
+    //     ],
+    //     pages : [
+            
+    //     ]
+    // },
  
 ]

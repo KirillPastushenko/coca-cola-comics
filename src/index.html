@@ -30,13 +30,13 @@
       </transition>
       <header>
         <div id="header-logo" @click="isComicsShow = false">
-          <img src="assets/img/coke-logo.png" alt="coke logo" />
-          Авторские комиксы от Coca-Cola  {{anim}} 
+          <a href="https://cchellenic.sharepoint.com/sites/intranet-ru/special/Ambassador/default.aspx">
+            <img src="assets/img/coke-logo.png" alt="coke logo" />
+          </a>
         </div>
         <ul id="header-menu">
-          <li @click="isComicsShow = false"><a @click="goToBlock" href="#top">Свежий выпуск</a></li>
           <li @click="isComicsShow = false"><a @click="goToBlock" href="#preview">Все выпуски</a></li>
-          <!-- <li @click="isComicsShow = false"><a @click="goToBlock" href="#fotokonkurs">Конкурс фотографий</a></li> -->
+          <li @click="isComicsShow = false"><a @click="goToBlock" href="#fotokonkurs">Конкурс</a></li>  
         </ul>
         <div id="header-btn-back"><a href="https://cchellenic.sharepoint.com/sites/intranet-ru/">Назад в Интранет</a></div>
         <!-- <div id="header-btn-back">Назад в Интранет</div> -->
@@ -48,10 +48,9 @@
               <div id="top">
                 <div class="text-wrap">
                   <div class="fresh">свежий</div>
-                  <h1>История<br />Coca-Cola</h1>
-                  <p>Пилотный выпуск серии авторских комиксов от Coca-Cola.</p>
-                  <p>Нагладно и кратко о продукции компании на все случаи жизни.</p>
-                  <div @click="showComicPage(1)" class="btn-more">Читать выпуск</div>
+                  <h1>Моменты <br>потребления – <br>моменты <br>жизни</h1>
+                  <p>Стратегия&nbsp;24/7 в&nbsp;комиксах! Наглядно и&nbsp;кратко о&nbsp;продукции на&nbsp;все случаи жизни.</p>
+                  <div @click="showComicPage(1)" class="btn-more">Читать новый выпуск</div>
                 </div>
                 <div class="img-wrap comic-back">
                   <img src="assets/img/main-back.png" alt="comic back" />
@@ -70,7 +69,7 @@
                       <img :src="'assets/img/'+item.poster">
                     </div>
                     <p class="preview-item-issue">{{ item.issue }}</p>
-                    <p class="preview-item-name">{{ item.name }}</p>
+                    <p class="preview-item-name" v-html="item.name"></p>
                   </div>
                 </div>
               </div>
@@ -79,7 +78,7 @@
           <transition name="fade">
             <div id="comic" v-if="isComicsShow">
               <div class="desc">
-                <h3>{{ currComics.name }}</h3>
+                <h3 v-html="currComics.name"></h3>
                 <p class="comic-desc-issue">{{ currComics.issue }}</p>
                 <p class="hide1024">&nbsp;</p>
                 <p class="hide1024">
@@ -90,10 +89,9 @@
                 <div id="comic-curr-imgs">
                     <svg v-if="!showMobile" @click="showModal = true"  width="100%" height="100%" viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <transition-group name="staggered-fade" tag="g" type="animation" @before-enter="beforeEnter" @after-enter="enter">
-                          <use v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" :class="'anim'+anim"  :data-index="index" width="503" height="815"/>
+                          <use v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" :class="'anim'+anim" :data-index="index" width="503" height="815"/>
                         </transition-group>
                           <use v-if="anim" v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" :class="'anim'+anim"  :data-index="index" width="503" height="815"/>
-
                         <defs>
                           <image v-for="(image, index) in currImageArr" :xlink:href="'assets/img/'+image" :key=image  :id="'img'+index" width="503" height="815"/>
                         </defs>
