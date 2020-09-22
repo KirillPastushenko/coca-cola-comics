@@ -1,5 +1,4 @@
 @import url('fonts.css');
-
 * {
   box-sizing: border-box;
   font-family: "Proxima Nova";
@@ -17,12 +16,15 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 0 0 0;
-  align-items: center;
+  align-items: flex-start;
   z-index: 2;
-  position: relative; 
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto; 
 }
 header ul {
   display: flex;
+  margin-top: 25px;
 }
 header li {
   cursor: pointer;
@@ -87,9 +89,9 @@ h3 ~ p {
     padding: 29px 0 24px 109px;
 }
 #header-logo img {
-    width: 85px;
+    width: 90px;
     margin-right: 21px;
-    height: 85px;
+    height: 90px;
     position: absolute;
     left: 0;
     top: 0;
@@ -102,6 +104,7 @@ h3 ~ p {
   background-position: 19px 50%;
   cursor: pointer;
   white-space: nowrap;
+  margin-top: 25px;
 }
 #header-btn-back a,
 #header-btn-back a:hover,
@@ -136,18 +139,18 @@ h3 ~ p {
   display: inline-block;
   color: #fff;
   padding: 0.5em 1em;
-  margin: 7.1em 0 1.4em 0;
+  margin: 8.1em 0 1.4em 0;
   visibility: hidden;
 }
 
 #top {
   position: relative;
-  padding-bottom: 15%;
+  padding-bottom: 125px;
 }
 #top .img-wrap {
   position: absolute;
   right: -47px;
-  top: -26px;
+  top: 0;
   width: 100%;
 }
 .comic-back {
@@ -203,7 +206,7 @@ h3 ~ p {
   display: flex;
   align-items: center;
   margin-bottom: 36px;
-  margin: 25px 0 36px 0;
+  margin: 25px 0 50px 0;
 }
 
 .sort-select-item {
@@ -397,61 +400,21 @@ h3 ~ p {
   visibility: hidden;
 }
 
+.preview-item.active-false{opacity: 0.3; pointer-events: none}
 
-.preview-item.active-false{
-    opacity: 0.3;
-    pointer-events: none
-}
-
-#fotokonkurs{
-    background: #B11E24;padding:50px 0;
-    display:none;
-}
+#fotokonkurs{background: #B11E24;padding:50px 0;display:none;}
  
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
-}
+header.modal{opacity: 0;}
+.modal .comic-nav-thumbs{opacity: 0}
+.modal #comic-curr-imgs{position: fixed;top: 0;}
 
-.modal-wrapper {
-  width: 100%;
-  height: 100vh;
-}
-
-.modal-container {
-  width: 100%;
-  margin: 0px auto;
-  padding: 20px 30px;
-  height: 100vh;
-  background-color: #fff;
-  overflow-y: scroll;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
+.modal-mask { position: fixed; z-index: 9998; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);display: table; transition: opacity 0.3s ease;}
+.modal-wrapper {width: 100%; height: 100vh;}
+.modal-container {width: 100%;margin: 0px auto;padding: 0;height: 100vh;background-color: #fff;overflow-y: scroll; border-radius: 2px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33); transition: all 0.3s ease; font-family: Helvetica, Arial, sans-serif;}
+.modal-body { margin: 0; height: 100%;}
 .modal-default-button:active,
 .modal-default-button:focus{border: none;box-shadow: none;outline: none;}
-.modal-default-button {
-  float: right;
-  top: 0;
-  background: transparent;
-  position: fixed;
-  border: none;
-  margin: 20px;
-  right: 0;
-}
+.modal-default-button { float: right; top: 0; background: transparent; position: fixed; border: none; margin: 20px; right: 0;}
 
 
 .modal-enter,
@@ -557,6 +520,8 @@ h3 ~ p {
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #comic-curr-imgs use{opacity: 1!important; transform: translateY(0px)!important;}
 }
+
+
 
 
 

@@ -7,7 +7,7 @@
    </head>
   <body class="firstload">
     <div id="app">
-       <transition name="modal">
+       <!--transition name="modal">
         <div v-if="showModal" @close="showModal = false" class="modal-mask">
           <div class="modal-wrapper">
             <div class="modal-container">
@@ -27,11 +27,11 @@
             </div>
           </div>
         </div>
-      </transition>
-      <header>
+      </transition-->
+      <header  v-bind:class="{ modal: showModal }">
         <div id="header-logo" @click="isComicsShow = false">
           <a href="https://cchellenic.sharepoint.com/sites/intranet-ru/special/Ambassador/default.aspx">
-            <img src="assets/img/coke-logo.png" alt="coke logo" />
+            <img src="assets/img/heart.svg" alt="coke logo" />
           </a>
         </div>
         <ul id="header-menu">
@@ -41,7 +41,7 @@
         <div id="header-btn-back"><a href="https://cchellenic.sharepoint.com/sites/intranet-ru/">Назад в Интранет</a></div>
         <!-- <div id="header-btn-back">Назад в Интранет</div> -->
       </header>
-      <section>
+      <section  v-bind:class="{ modal: showModal }">
         <div class="container">
           <transition name="fade">
             <div id="main" v-if="!isComicsShow">
@@ -87,6 +87,12 @@
               </div>
               <div id="comic-wrap">
                 <div id="comic-curr-imgs">
+                  <button class="modal-default-button" v-if="showModal" @click="showModal = false">
+                    <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path style="transform: matrix(1, 1, 0, 1, -1, 0);" d="M0 1H30" stroke="black"></path> 
+                      <path style="transform: matrix(1, -1, 0, 1, 0, 10);" d="M0 21H30" stroke="black"></path></svg>
+                  </button>
+
                     <svg v-if="!showMobile" @click="showModal = true"  width="100%" height="100%" viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <transition-group name="staggered-fade" tag="g" type="animation" @before-enter="beforeEnter" @after-enter="enter">
                           <use v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" :class="'anim'+anim" :data-index="index" width="503" height="815"/>
