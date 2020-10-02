@@ -439,7 +439,7 @@ h3 ~ p {
 #photokonkurs .text-wrap{max-width:360px}
 #photokonkurs .img-wrap{width: 67%; margin-top: -111px;}
 #photokonkurs .img-wrap svg{width:100%}
-#bg-photokonkurs{position:absolute;background-size: 100% 100%;left: 0;background-position: left top;height: 609px;background-repeat: no-repeat;width: 100vw;background-image: url(/bg-photokonkurs.svg);}
+#bg-photokonkurs{position:absolute;background-size: 100% 100%;left: 0;background-position: left top;height: 609px;background-repeat: no-repeat;width: 100vw;background-image: url(../img/bg-photokonkurs.svg);}
 #photokonkurs .notes{font-size: 14px;}
 #photokonkurs .btn-gray{margin: 23px 0 122px;}
 
