@@ -428,6 +428,7 @@ h3 ~ p {
 
 
 
+
 .btn-gray{color: #F8F8F8;background: #151515;line-height: 50px;border-radius: 3px;padding: 0 33px;text-decoration: none;display:inline-block;}
 
 #photokonkurs{padding: 50px 0 0 0;}
@@ -441,6 +442,7 @@ h3 ~ p {
 #bg-photokonkurs{position:absolute;background-size: 100% 100%;left: 0;background-position: left top;height: 609px;background-repeat: no-repeat;width: 100vw;background-image: url(/bg-photokonkurs.svg);}
 #photokonkurs .notes{font-size: 14px;}
 #photokonkurs .btn-gray{margin: 23px 0 122px;}
+
 
 
 header.modal{opacity: 0;}
