@@ -424,9 +424,25 @@ h3 ~ p {
 }
 
 .preview-item.active-false{opacity: 0.3; pointer-events: none}
+.preview-item.active-false{opacity: 0.3; pointer-events: none}
 
-#fotokonkurs{background: #B11E24;padding:50px 0;display:none;}
- 
+
+
+.btn-gray{color: #F8F8F8;background: #151515;line-height: 50px;border-radius: 3px;padding: 0 33px;text-decoration: none;display:inline-block;}
+
+#photokonkurs{padding: 50px 0 0 0;}
+#photokonkurs h2{font-weight: 900;line-height: 0.94;font-size: 50px;margin-top: 108px;margin-bottom: 0.3em;}
+#photokonkurs p{font-size: 16px;line-height: 22px;color: #3D3F4A;}
+#photokonkurs h2 span{font-size: inherit; color: #e61d2b;}
+#photokonkurs .container{display: flex;justify-content: space-between;}
+#photokonkurs .text-wrap{max-width:360px}
+#photokonkurs .img-wrap{width: 67%; margin-top: -111px;}
+#photokonkurs .img-wrap svg{width:100%}
+#bg-photokonkurs{position:absolute;background-size: 100% 100%;left: 0;background-position: left top;height: 609px;background-repeat: no-repeat;width: 100vw;background-image: url(/bg-photokonkurs.svg);}
+#photokonkurs .notes{font-size: 14px;}
+#photokonkurs .btn-gray{margin: 23px 0 122px;}
+
+
 header.modal{opacity: 0;}
 .modal .comic-nav-thumbs{opacity: 0}
 .modal #comic-curr-imgs{position: fixed;top: 0;}
@@ -442,14 +458,11 @@ header.modal{opacity: 0;}
 
 .modal-enter,
 .modal-leave-active {opacity: 0;}
-
 .modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
+.modal-leave-active .modal-container {-webkit-transform: scale(1.1);transform: scale(1.1);}
 
 .animready{opacity: 1!important;transform: translateY(0)!important; transition: 0!important;}
+ 
 
 @media (max-width:1100px){
     #comic .desc{margin-left: 0;}
@@ -543,6 +556,8 @@ header.modal{opacity: 0;}
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #comic-curr-imgs use{opacity: 1!important; transform: translateY(0px)!important;}
 }
+
+
 
 
 
