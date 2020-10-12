@@ -244,7 +244,7 @@ export const comicsData = [
     },
     {
         id : 6,
-        name : 'Найди свой фьюжн с&nbsp;FUZETEA',
+        name : 'Найди свой фьюжн с&nbsp;Fuzetea',
         active: true,
         issue : 'выпуск 6',
         poster : 'comic-6-0.png',

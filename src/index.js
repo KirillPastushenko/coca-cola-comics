@@ -106,9 +106,8 @@ const app = new Vue({
     },
 
     onResize: function () {
-        this.showMobile = document.documentElement.clientWidth > 1023 ? false : true;
+      this.showMobile = document.documentElement.clientWidth > 1023 ? false : true;
     },
- 
   },
 });
 
