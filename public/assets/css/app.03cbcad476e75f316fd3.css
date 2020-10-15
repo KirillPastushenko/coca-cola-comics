@@ -396,7 +396,7 @@ h3 ~ p {
   cursor:pointer;
 }
 #comic-curr-imgs use {
-  transition: 1s;
+  transition: all 1s ease;
 }
 
 .fade-enter-active,
@@ -563,15 +563,13 @@ header.modal{opacity: 0;}
     .comic-nav-item { width: 10.156vw;}
 }
 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  #comic-curr-imgs use{opacity: 1!important; transform: translateY(0px)!important;}
-}
-
+ 
 .icons {border: 1px solid;border-radius: 3px;display: inline-block;line-height: 11px;padding: 2px 3px; margin-left: 2px;}
 .icons.space {line-height: 7px; padding-bottom: 3px;}
 .icons svg {width:10px; height:10px;}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+  /* #comic-curr-imgs use{opacity: 1!important; transform: translateY(0px)!important;}  */
   #comic-curr-imgs>svg{  height: calc(92.3vh - 104px)!important;  width: calc(92.3vh - 104px * .615)!important;} 
   .modal #comic-curr-imgs>svg{  height: 100vh !important;  width: calc(100vh * .615)!important;} 
   .modal #comic-curr-imgs{left:50%;transform:translateX(-50%)}

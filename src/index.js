@@ -1,7 +1,11 @@
+import "@babel/polyfill";
 import Vue from "vue";
 import Vuebar from "vuebar";
 import * as comicsData from "./components/comics-data";
 import "./css/style.css";
+
+
+ 
 Vue.use(Vuebar);
 const app = new Vue({
   el: "#app",
@@ -75,7 +79,9 @@ const app = new Vue({
 
     enter: function(el, done) {
       let delay = el.dataset.index * 700;
+      console.log(el,el.dataset.index);
       setTimeout(function() {
+
         el.style.opacity = 1;
         el.style.transform = "translateY(0)";
       }, delay);
