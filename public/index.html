@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>История Coca-Cola</title>
+   <link href="assets/css/app.f6f96ff37b1933806a38.css" rel="stylesheet"></head>
+  <body class="firstload">
+    <div id="app">
+      <header  v-bind:class="{ modal: showModal }">
+        <div id="header-logo" @click="isComicsShow = false">
+          <a href="https://cchellenic.sharepoint.com/sites/intranet-ru/special/Ambassador/new/default.aspx">
+            <img src="assets/img/heart.svg" alt="coke logo" />
+          </a>
+        </div>
+        <ul id="header-menu">
+          <li @click="isComicsShow = false"><a @click="goToBlock" href="#preview">Все выпуски</a></li>
+          <li @click="isComicsShow = false"><a @click="goToBlock" href="#fotokonkurs">Конкурс</a></li>  
+        </ul>
+        <div id="header-btn-back"><a href="https://cchellenic.sharepoint.com/sites/intranet-ru/">Назад в Интранет</a></div>
+        <!-- <div id="header-btn-back">Назад в Интранет</div> -->
+      </header>
+      <section  :class="{ modal: showModal }">
+        <div class="container">
+          <transition name="fade">
+            <div id="main" v-if="!isComicsShow">
+              <div id="top">
+                <div class="text-wrap">
+                  <div class="fresh">свежий</div>
+                  <h1>Моменты <br>потребления – <br>моменты <br>жизни</h1>
+                  <p>Стратегия&nbsp;24/7 в&nbsp;комиксах! Наглядно и&nbsp;кратко о&nbsp;продукции на&nbsp;все случаи жизни.</p>
+                  <div @click="showComicPage(1)" class="btn-more">Читать новый выпуск</div>
+                </div>
+                <div class="img-wrap comic-back">
+                  <img src="assets/img/main-back.png" alt="comic back" />
+                </div>
+                <div class="img-wrap comic-front">
+                  <img src="assets/img/main-front.png" alt="comic front" />
+                </div>
+              </div>
+              <div id="preview">
+                <div class="preview-head">
+                  <h2>Все выпуски</h2>
+                </div>
+                <div id="preview-list">
+                  <div class="preview-item" @click="showComicPage(item.id)" v-for="item in items" :key="item.issue" :class="'active-'+item.active">
+                    <div class="img-wrap">
+                      <img :src="'assets/img/'+item.poster">
+                    </div>
+                    <p class="preview-item-issue">{{ item.issue }}</p>
+                    <p class="preview-item-name" v-html="item.name"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+          <transition name="fade">
+            <div id="comic" v-if="isComicsShow">
+              <div class="desc">
+                <h3 v-html="currComics.name"></h3>
+                <p class="comic-desc-issue">{{ currComics.issue }}</p>
+                <p class="hide1024">&nbsp;</p>
+                <p class="hide1024">
+                  Используйте стрелки <span class="icons arrow right">←</span>&nbsp;<span class="icons arrow left">→</span> или&nbsp;пробел <span class="icons space">&mdash;</span> для&nbsp;перелистывания. Кликните на изображение для увеличения <span class="icons search"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+                     <path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+                       S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+                       c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+                        M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/>
+                 </svg></span>
+                </p>
+              </div>
+              <div id="comic-wrap">
+                <div id="comic-curr-imgs">
+                  <button class="modal-default-button" v-if="showModal" @click="showModal = false">
+                    <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path style="transform: matrix(1, 1, 0, 1, -1, 0);" d="M0 1H30" stroke="black"></path> 
+                      <path style="transform: matrix(1, -1, 0, 1, 0, 10);" d="M0 21H30" stroke="black"></path></svg>
+                  </button>
+
+                  <svg v-if="!showMobile" @click="showModal = true"  width="100%" height="100%" viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <transition-group name="staggered-fade" tag="g" type="animation" @before-enter="beforeEnter" @after-enter="enter">
+                        <use v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" :class="'anim'+anim" :data-index="index" width="503" height="815"/>
+                      </transition-group>
+                        <use v-if="anim" v-for="(image, index) in currImageArr" :xlink:href="'#img'+index" :key="image" :class="'anim'+anim"  :data-index="index" width="503" height="815"/>
+                      <defs>
+                        <image v-for="(image, index) in currImageArr" :xlink:href="'assets/img/'+image" :key=image  :id="'img'+index" width="503" height="815"/>
+                      </defs>
+                  </svg>
+
+
+                  <svg v-if="showMobile" v-for="(arrImages, arrIndex) in currComics.pages" width="100%" height="100%" viewBox="0 0 503 817" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <use v-for="(image, index) in arrImages" :xlink:href="'#img'+image" :key="image" v-bind:data-index="index" width="503" height="815"/>
+                      <defs>
+                          <image v-for="(image, index) in arrImages" :xlink:href="'assets/img/'+image" :key=image  :id="'img'+image" width="503" height="815"/>
+                      </defs>
+                  </svg>
+                </div>
+
+
+
+                <div class="comic-nav-thumbs" :class="{active: isThumbsActive}">
+                  <div class="comic-burder" @click="showThumbs">
+                    <svg width="30" height="33" viewBox="0 0 30 33" fill="none"  xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 1H30" stroke="black" />
+                      <path d="M0 11H30" stroke="black" />
+                      <path d="M0 21H30" stroke="black" />
+                    </svg>
+                  </div>
+                  <div style="height: 100%;" :class="{active: isThumbsActive}" v-bar="{preventParentScroll: true, scrollThrottle: 50}">
+                    <ol>
+                      <li
+                        v-for="(preview, index) in currComics.previews"
+                        @click="setCurrImageArr(index)"
+                        class="comic-nav-item"
+                        :key="preview">
+                        <img :src="'assets/img/'+preview">
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </div>
+        <div id="photokonkurs" v-if="!isComicsShow">
+          <div id="bg-photokonkurs"> </div>
+            
+            <div class="container">
+              <div class="text-wrap">
+              <h2>Фотоконкурс<br>
+              <span class="quoted">Поделись моментом»</span></h2>
+              <p>Присылайте фото своих «моментов жизни» с&nbsp;продукцией нашей компаниии выигрывайте памятные призы</p>
+              <a href="" class="btn btn-gray">Принять участие</a>
+              <!--p class="notes">© The Coca-Cola Company | Все права защищены</p-->
+            </div>
+            <div class="img-wrap">
+              <img src="assets/img/pk.png" alt="Фотоконкурс">
+            </div>
+        </div>
+      </section>
+
+      <transition name="fade">
+        <footer v-if="isComicsShow">
+          <div
+            v-if="currImageArrId > 0 && currImageArrId <= currCountImages"
+            class="comic-nav-arr prev"
+            @click="showPrevPage">предыдущая страница</div>
+          <div
+            v-if="currImageArrId < currCountImages-1"
+            class="comic-nav-arr next"
+            @click="showNextPage">следующая страница</div>
+          <div
+            v-if="currImageArrId > currCountImages-2"
+            class="comic-nav-arr stop"
+            @click="showComicPage(currComics.id+1)">
+            продолжение в&nbsp;следующем выпуске...
+          </div>
+        </footer>
+      </transition>
+    </div>
+  <script src="assets/js/app.f6f96ff37b1933806a38.js"></script></body>
+</html>
