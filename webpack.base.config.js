@@ -1,4 +1,5 @@
 const path = require('path');
+require("@babel/polyfill");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -16,7 +17,7 @@ module.exports = {
         paths:PATHS
     },
     entry: {
-        app: PATHS.src
+        app: ['@babel/polyfill',PATHS.src]
     },
     output: {
         filename: `${PATHS.assets}js/[name].[hash].js`,
