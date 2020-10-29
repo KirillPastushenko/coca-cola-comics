@@ -151,7 +151,7 @@
             class="comic-nav-arr next"
             @click="showNextPage">следующая страница</div>
           <div
-            v-if="currImageArrId > currCountImages-2"
+            v-if="currImageArrId > currCountImages-2 && nextPage"
             class="comic-nav-arr stop"
             @click="showComicPage(currComics.id+1)">
             продолжение в&nbsp;следующем выпуске...

@@ -5,11 +5,11 @@ import * as comicsData from "./components/comics-data";
 import "./css/style.css";
 
 
- 
+
 Vue.use(Vuebar);
 const app = new Vue({
   el: "#app",
-  data: function() {
+  data: function () {
     return {
       items: comicsData.comicsData,
       isComicsShow: false,
@@ -20,17 +20,18 @@ const app = new Vue({
       currCountImages: 0,
       prev: false,
       next: true,
-      showMobile:false,
+      showMobile: false,
       showModal: false,
       anim: true,
-      timer: null
+      timer: null,
+      nextPage: true
     };
   },
 
   created() {
     if (process.browser) {
-        window.addEventListener("resize", this.onResize);
-        this.onResize();
+      window.addEventListener("resize", this.onResize);
+      this.onResize();
     };
     document.addEventListener("keydown", (event) => {
       if (event.keyCode == 32 || event.keyCode == 39 || event.keyCode == 13) {
@@ -41,18 +42,16 @@ const app = new Vue({
     });
   },
 
-
   beforeDestroy() {
     window.removeEventListener("resize", this.onResize);
   },
 
-
   methods: {
-    showThumbs: function() {
+    showThumbs: function () {
       this.isThumbsActive = !this.isThumbsActive;
     },
 
-    showComicPage: function(comicsID) {
+    showComicPage: function (comicsID) {
       this.isComicsShow = true;
       this.currComics = this.items.filter((item) => item.id == comicsID)[0];
       this.currImageArr = [];
@@ -61,54 +60,60 @@ const app = new Vue({
       this.currImageArr.push(this.currComics.poster);
     },
 
-    setCurrImageArr: function(id) {
-        this.anim = false;
-        this.currCountImages = this.currComics.pages.length;
-        this.currImageArrId = id;
-        this.currImageArr = [];
-        this.currImageArr = this.currComics.pages[id].slice();
-        this.timer = setTimeout(() => {  
-          this.anim = true;
-        }, this.currImageArr.length * 700);
+    setCurrImageArr: function (id) {
+      this.anim = false;
+      this.currCountImages = this.currComics.pages.length;
+      this.currImageArrId = id;
+      this.currImageArr = [];
+      this.currImageArr = this.currComics.pages[id].slice();
+      this.timer = setTimeout(() => {
+        this.anim = true;
+      }, this.currImageArr.length * 700);
+      this.isNextPageActive();
     },
- 
-    beforeEnter: function(el) {
+
+    beforeEnter: function (el) {
       el.style.opacity = 0;
       el.style.transform = "translateY(20px)";
     },
 
-    enter: function(el, done) {
-      let delay = el.dataset.index * 700;
-      console.log(el,el.dataset.index);
-      setTimeout(function() {
-
+    enter: function (el, done) {
+      let delay = el.getAttribute('data-index') * 700;
+      setTimeout(function () {
         el.style.opacity = 1;
         el.style.transform = "translateY(0)";
       }, delay);
     },
 
-    showPrevPage: function() {
-      if (this.currImageArrId > 0 &&  this.anim == true) {
+    showPrevPage: function () {
+      if (this.currImageArrId > 0 && this.anim == true) {
         this.setCurrImageArr(--this.currImageArrId);
-      }  else {
+      } else {
         this.anim = true;
         clearTimeout(this.timer);
       }
     },
 
-    showNextPage: function() {
-      if (this.currImageArrId + 1 < this.currCountImages && this.anim == true) {
+    showNextPage: function () {
+      if (this.currImageArrId + 1 < this.currCountImages && this.anim == true && this.nextPage) {
         this.setCurrImageArr(++this.currImageArrId);
       } else {
-          this.anim = true;
-          clearTimeout(this.timer);
+        this.anim = true;
+        clearTimeout(this.timer);
       }
+      this.isNextPageActive();
     },
 
-    goToBlock:  function (event) {
+    isNextPageActive: function () {
+        this.nextPage = this.currImageArrId + 1 == this.currCountImages ?
+        this.items[this.currComics.id].active : 
+        true;
+    },
+
+    goToBlock: function (event) {
       event.preventDefault();
       let link = event.target.getAttribute('href');
-      document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start'});
+      document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
 
     onResize: function () {
@@ -117,7 +122,7 @@ const app = new Vue({
   },
 });
 
-setTimeout(function() {
+setTimeout(function () {
   document.querySelector("body").classList.remove("firstload");
 }, 50);
 

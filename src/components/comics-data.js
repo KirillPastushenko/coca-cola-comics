@@ -193,7 +193,7 @@ export const comicsData = [
     {
         id : 4,
         name : 'Включай настроение с&nbsp;Pulpy ',
-        active: true,
+        active: false,
         issue : 'выпуск 4',
         poster : 'comic-4-0.png',
         previews: [
@@ -219,7 +219,7 @@ export const comicsData = [
     {
         id : 5,
         name : 'Вкусный и&nbsp;полезный перекус с&nbsp;Adez',
-        active: true,
+        active: false,
         issue : 'выпуск 5',
         poster : 'comic-5-0.png',
         previews: [
@@ -245,7 +245,7 @@ export const comicsData = [
     {
         id : 6,
         name : 'Найди свой фьюжн с&nbsp;Fuzetea',
-        active: true,
+        active: false,
         issue : 'выпуск 6',
         poster : 'comic-6-0.png',
         previews: [
@@ -268,7 +268,7 @@ export const comicsData = [
     {
         id : 7,
         name : 'Fanta: вот это поворот ',
-        active: true,
+        active: false,
         issue : 'выпуск 7',
         poster : 'comic-7-0.png',
         previews: [
@@ -310,7 +310,7 @@ export const comicsData = [
     {
         id : 8,
         name : 'Coca-Cola Energy: энергия в&nbsp;твоём вкусе',
-        active: true,
+        active: false,
         issue : 'выпуск 8',
         poster : 'comic-8-0.png',
         previews: [
@@ -337,7 +337,7 @@ export const comicsData = [
     {
         id : 9,
         name : 'Устрой себе Rich!',
-        active: true,
+        active: false,
         issue : 'выпуск 9',
         poster : 'comic-9-0.png',
         previews: [
@@ -366,7 +366,7 @@ export const comicsData = [
     {
         id : 10,
         name : 'Coca-Cola: попробуй… почувствуй',
-        active: true,
+        active: false,
         issue : 'выпуск 10',
         poster : 'comic-10-0.png',
         previews: [
@@ -397,7 +397,7 @@ export const comicsData = [
     {
         id : 11,
         name : 'Разнообразие напитков для всей семьи',
-        active: true,
+        active: false,
         issue : 'выпуск 11',
         poster : 'comic-11-0.png',
         previews: [
@@ -442,7 +442,7 @@ export const comicsData = [
     {
         id : 12,
         name : 'Прояви характер вместе с&nbsp;Schweppes ',
-        active: true,
+        active: false,
         issue : 'выпуск 12',
         poster : 'comic-12-0.png',
         previews: [
@@ -479,7 +479,7 @@ export const comicsData = [
     {
         id : 13,
         name : 'Моменты потребления – моменты жизни ',
-        active: true,
+        active: false,
         issue : 'выпуск 13',
         poster : 'comic-13-0.png',
         previews: [
@@ -504,7 +504,7 @@ export const comicsData = [
     // {
     //     id : 14,
     //     name : 'История продолжается',
-    //     active: true,
+    //     active: false,
     //     issue : 'выпуск 14',
     //     poster : 'comic-14-0.png',
     //     previews: [
